@@ -15,9 +15,14 @@ return new class extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
-            $table->uuid();
+            $table->uuid()->unique();
             $table->foreignId('dealership_id')->constrained()->cascadeOnDelete();
-            $table->string('name');
+            $table->string('name')->unique();
+            $table->string('address');
+            $table->string('city');
+            $table->string('state');
+            $table->string('zip');
+            $table->string('timezone')->default('UTC');
             $table->timestamps();
         });
     }

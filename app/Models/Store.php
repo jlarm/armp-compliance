@@ -14,6 +14,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read string $uuid
  * @property-read int $dealership_id
  * @property-read string $name
+ * @property-read string $address
+ * @property-read string $city
+ * @property-read string $state
+ * @property-read string $zip
+ * @property-read string $timezone
  * @property-read CarbonInterface $created_at
  * @property-read CarbonInterface $updated_at
  */
@@ -32,6 +37,11 @@ final class Store extends Model
             'uuid' => 'string',
             'dealership_id' => 'integer',
             'name' => 'string',
+            'address' => 'string',
+            'city' => 'string',
+            'state' => 'string',
+            'zip' => 'string',
+            'timezone' => 'string',
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
         ];

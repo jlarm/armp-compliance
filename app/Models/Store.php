@@ -5,20 +5,21 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Carbon\CarbonInterface;
-use Database\Factories\DealershipFactory;
+use Database\Factories\StoreFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property-read int $id
  * @property-read string $uuid
+ * @property-read int $dealership_id
  * @property-read string $name
  * @property-read CarbonInterface $created_at
  * @property-read CarbonInterface $updated_at
  */
-final class Dealership extends Model
+final class Store extends Model
 {
-    /** @use HasFactory<DealershipFactory> */
+    /** @use HasFactory<StoreFactory> */
     use HasFactory;
 
     /**
@@ -29,6 +30,7 @@ final class Dealership extends Model
         return [
             'id' => 'integer',
             'uuid' => 'string',
+            'dealership_id' => 'integer',
             'name' => 'string',
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
